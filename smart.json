@@ -1,3 +1,7 @@
 {
-  "packages": {}
+  "packages": {
+    "accounts-ui-bootstrap-dropdown": {},
+    "bootstrap-3": {},
+    "accounts-ui-bootstrap-3": {}
+  }
 }

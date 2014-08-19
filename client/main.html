@@ -1,15 +1,46 @@
+
 <head>
   <title>Piazzo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
+
 <body>
-  <div class="container">
-    <header class="navbar">
-      <div class="navbar-inner">
-        <a class="brand" href="/">Piazzo</a>
-      </div>
-    </header>
-    <div id="main" class="row-fluid">
-      {{> chatList}}
-    </div>
-  </div>
+<div class="container-fluid">
+  {{>menu}}
+  {{>welcome}}
+  {{> chatList}}
+</div>
 </body>
+ 
+<template name="welcome">
+  <div class="row">
+    <h1>Welcome</h1>
+    <p>
+      This is a test application for Bootstrap3 in MeteorJS. This is you:
+		{{#if currentUser}}
+			<img src="{{currentUser.profile.picture}}">
+		{{/if}}
+    </p>
+  </div>
+</template>
+ 
+<template name="menu">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Bootstrap3 test</a>
+    </div>
+ 
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+      </ul>
+ 
+      <ul class="nav navbar-nav navbar-right">
+        {{> loginButtons}}
+      </ul>
+    </div>
+  </nav>
+</template>
+
